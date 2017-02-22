@@ -1,0 +1,11 @@
+---
+- hosts: vagrant
+  connection: local
+  become: yes
+  become_user: root
+  become_method: sudo
+  tasks:
+    - name: install git
+      yum: name=git update_cache=yes state=latest
+    - name: install vim
+      yum: name=vim update_cache=yes state=latest
